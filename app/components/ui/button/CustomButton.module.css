@@ -1,0 +1,29 @@
+.button {
+    width: 100%;
+    padding: 13px 0;
+    background: var(--component-primary-color);
+    color: var(--font-color);
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s, color 0.18s;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 14px rgba(127,90,240,0.13);
+    border: 2px solid var(--component-border-color);
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    background: var(--component-hover); 
+    color: var(--component-hover-color);
+    box-shadow: 0 6px 24px rgba(94,230,255,0.18);
+}
+
+.button:active {
+    background: #393552;
+    color: var(--component-primary-color);
+}

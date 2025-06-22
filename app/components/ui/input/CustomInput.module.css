@@ -1,0 +1,27 @@
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    text-shadow: 0 1px 6px #18182444;
+}
+
+.input {
+    width: 90%;
+    padding: 13px 16px;
+    margin-bottom: 24px;
+    border: 2px solid var(--component-border-color);
+    border-radius: 12px;
+    font-size: 16px;
+    background: #22223b;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 2px 8px rgba(127,90,240,0.09);
+    outline: none;
+}
+
+.input:focus {
+    border: 2px solid var(--component-hover); /* Celeste */
+    background: #23263a;
+    box-shadow: 0 0 0 3px #7f5af055;
+}
