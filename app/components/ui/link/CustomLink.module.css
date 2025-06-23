@@ -1,0 +1,17 @@
+.forgotPassword {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.forgotPassword a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.forgotPassword a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+        

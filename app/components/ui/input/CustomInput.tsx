@@ -9,6 +9,7 @@ interface CustomInputProps {
   type?: string;
   placeholder?: string;
   required?: boolean;
+  minLength?: number;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({  
@@ -16,13 +17,21 @@ const CustomInput: React.FC<CustomInputProps> = ({
   label,
   type = 'text',
   placeholder = '',
-  required = true
+  required = true,
+  minLength
 }) => {
   return (
-        <>
-            <label className={styles.label} htmlFor={id}>{label}</label>
-            <input className={styles.input} type={type} id={id} placeholder={placeholder} required={required} />
-        </>
+        <div className={styles.formGroup}>
+          <input 
+              type={type} 
+              id={id} 
+              className={styles.formInput}
+              placeholder={placeholder}
+              required={required}
+              {...(minLength && { minLength })}
+          />
+          <label htmlFor={id} className={styles.formLabel}>{label}</label>
+      </div>
   );
 };
 

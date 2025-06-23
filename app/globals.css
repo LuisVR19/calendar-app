@@ -1,14 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: linear-gradient(135deg, #181824 0%, #22223b 100%);
+  /* --background: linear-gradient(135deg, #181824 0%, #22223b 100%);
   --font-family: 'Segoe UI', Arial, sans-serif;
   --font-color: #e0e6f0;
 
   --component-primary-color: #7f5af0;
   --component-hover: #5ee6ff;
   --component-hover-color: #23263a;
-  --component-border-color: #393552;
+  --component-border-color: #393552; */
+
+  --primary-color: #000;
+  --secondary-color: #666;
+  --background-color: #fff;
+  --border-color: #ddd;
+  --focus-color: #000;
+  --error-color: #e74c3c;
   
 }
 
@@ -26,8 +33,14 @@
   }
 } */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: var(--background);
+    /* background: var(--background);
     font-family: var(--font-family);
     margin: 0;
     padding: 0;
@@ -35,5 +48,32 @@ body {
     color: var(--font-color);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    min-height: 100vh;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* padding: 20px; */
 }
+
+.layout{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  
+}
+
+.main-content {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+

@@ -2,8 +2,13 @@ import { ReactNode } from "react";
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
-    <div style={{ padding: "2rem", minHeight: "100vh" }}>
-      <main>{children}</main>
+    <div className="layout">
+      <main className="main-content">
+        {children}
+      </main>
+      {/* <footer className="footer">
+        <p>© 2023 Your Company Name</p>
+      </footer> */}
     </div>
   );
 }
