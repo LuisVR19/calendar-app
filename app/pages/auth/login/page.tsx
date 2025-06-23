@@ -29,6 +29,7 @@ export default function Login() {
             <div className={styles.linkContainer}>
                 <CustomLink text={t.login.forgotPassword} route={routes.auth.login} />
                 <CustomLink text={t.login.register} route={routes.auth.register} />
+                <CustomLink text="ENTRAR TEST" route={routes.dashboard.calendar} />
             </div>
         </div>
     )
