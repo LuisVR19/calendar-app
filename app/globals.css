@@ -16,7 +16,8 @@
   --border-color: #ddd;
   --focus-color: #000;
   --error-color: #e74c3c;
-  
+    --muted-color: #999;
+
 }
 
 /* @theme inline {

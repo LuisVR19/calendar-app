@@ -1,3 +1,5 @@
+import { link } from "fs";
+
 const es = {
   login: {
     title: "Iniciar Sesión",
@@ -8,6 +10,20 @@ const es = {
     button: "Entrar",
     register: "Registrarse",
     forgotPassword: "¿Olvidaste tu contraseña?",
+  },
+  layout: {
+    about: "Acerca de",
+    description: "Una aplicación de calendario simple y elegante",
+    links: "Enlaces",
+    reservedRights: "Luis Valverde Rios y tontin. Todos los derechos reservados.",
+    pages: {
+      home: "Inicio",
+      calendar: "Calendario",
+      groups: "Grupos",
+      metrics: "Métricas",
+      myProfile: "Mi Perfil",
+      about: "Acerca de",
+    },
   },
 };
 
