@@ -1,8 +1,53 @@
+'use client';
+
 import { getTranslations } from "@/app/lib/i18n";
 import styles from './MainNavbar.module.css';
+import { useEffect } from "react";
 
 
 const MainNavbar = ({  }) => {
+
+    useEffect(() => {
+        const mobileLinks = document.querySelectorAll(`.${styles.mobileMenuLink}`);
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileToggle = document.getElementById('mobileToggle');
+
+        const closeMobileMenu = () => {
+            mobileMenu?.classList.remove('active');
+            mobileToggle?.classList.remove('active');
+        };
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        const handleResize = () => {
+        if (window.innerWidth > 768) {
+            closeMobileMenu();
+        }
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Limpieza de eventos al desmontar
+        return () => {
+        mobileLinks.forEach(link => {
+            link.removeEventListener('click', closeMobileMenu);
+        });
+        window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const handleToggle = () => {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileToggle = document.getElementById('mobileToggle');
+
+        mobileMenu?.classList.remove('hide');
+        mobileToggle?.classList.remove('hide');
+        mobileMenu?.classList.toggle('active');
+        mobileToggle?.classList.toggle('active');
+    };
+
   return (
     <nav className={styles.navbar}>
         <div className={styles.navbarContainer}>
@@ -36,29 +81,29 @@ const MainNavbar = ({  }) => {
                 </a>
             </div>
 
-            <button className="mobile-toggle" >
+        <button className={`${styles.mobileToggle} ${styles.hide}`} id="mobileToggle" onClick={handleToggle} >
             <span></span>
             <span></span>
             <span></span>
             </button>
         </div>
 
-        {/* <div className="mobile-menu" id="mobileMenu">
-            <ul className="mobile-menu-list">
-            <li className="mobile-menu-item">
-                <a href="#" className="mobile-menu-link active">Inicio</a>
+        <div className={`${styles.mobileMenu} ${styles.hide}`}>
+            <ul className={styles.mobileMenuList}>
+            <li className={styles.mobileMenuItem}>
+                <a href="#" className={styles.mobileMenuLink}>Inicio</a>
             </li>
-            <li className="mobile-menu-item">
-                <a href="#" className="mobile-menu-link">Productos</a>
+            <li className={styles.mobileMenuItem}>
+                <a href="#" className={styles.mobileMenuLink}>Productos</a>
             </li>
-            <li className="mobile-menu-item">
-                <a href="#" className="mobile-menu-link">Servicios</a>
+            <li className={styles.mobileMenuItem}>
+                <a href="#" className={styles.mobileMenuLink}>Servicios</a>
             </li>
-            <li className="mobile-menu-item">
-                <a href="#" className="mobile-menu-link">Acerca de</a>
+            <li className={styles.mobileMenuItem}>
+                <a href="#" className={styles.mobileMenuLink}>Acerca de</a>
             </li>
-            <li className="mobile-menu-item">
-                <a href="#" className="mobile-menu-link">Contacto</a>
+            <li className={styles.mobileMenuItem}>
+                <a href="#" className={styles.mobileMenuLink}>Contacto</a>
             </li>
             </ul>
 
@@ -68,7 +113,7 @@ const MainNavbar = ({  }) => {
                 <span>Mi Perfil</span>
             </a>
             </div>
-        </div> */}
+        </div>
     </nav>
 
   );

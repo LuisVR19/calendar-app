@@ -8,6 +8,7 @@ import CustomButton from "@/app/components/ui/button/CustomButton";
 import { getTranslations } from "@/app/lib/i18n";
 import CustomLink from "@/app/components/ui/link/CustomLink";
 import { redirect } from 'next/navigation';
+import Container from '@/app/components/ui/container/container';
 
 export default function Login() {
 
@@ -18,7 +19,7 @@ export default function Login() {
     }
     
     return (
-        <div className={styles.loginContainer}>
+        <Container>
             <h1 className={styles.loginTitle}>{t.login.title}</h1>
 
             <Image className={styles.img}
@@ -37,6 +38,7 @@ export default function Login() {
                 <CustomLink text={t.login.forgotPassword} route={routes.auth.login} />
                 <CustomLink text={t.login.register} route={routes.auth.register} />
             </div>
-        </div>
+        </Container>
+
     )
 }
