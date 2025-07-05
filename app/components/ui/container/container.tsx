@@ -9,7 +9,7 @@ interface ContainerProps {
 
 const Container: React.FC<ContainerProps> = ({ children }) => {
 
-  return <div className={styles.loginContainer}>{children}</div>;
+  return <div className={styles.generalContainer}>{children}</div>;
 
 };
 

@@ -6,3 +6,11 @@
     border-radius: 8px;
     background-color: var(--background-color);
 }
+
+.generalContainer {
+    width: 80%;
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color);
+}

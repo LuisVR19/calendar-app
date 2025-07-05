@@ -1,0 +1,174 @@
+
+/* Main container */
+.calendarContainer {
+  /* min-height: 100vh; */
+  background-color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 1rem; */
+}
+
+/* Calendar wrapper */
+.calendarWrapper {
+  width: 100%;
+  height: 80vh;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Calendar header */
+.calendarHeader {
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1.5rem;
+}
+
+.calendarHeaderContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.calendarIcon {
+  width: 3rem;
+  height: 3rem;
+  background-color: #06b6d4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendarIcon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.calendarTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+/* Calendar body */
+.calendarBody {
+  flex: 1;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+/* Calendar table */
+.calendarTable {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+
+}
+
+/* Table header */
+.calendarTable thead th {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  padding-bottom: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+/* Table body */
+.calendarTable tbody tr {
+  height: calc(100% / 5);
+}
+
+.calendarTable tbody td {
+  border: 1px solid #f3f4f6;
+  padding: 0.5rem;
+  vertical-align: top;
+  position: relative;
+}
+
+/* Day cell content */
+.dayCell {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dayNumber {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 50%;
+  color: #374151;
+  transition: background-color 0.2s ease;
+}
+
+.dayNumber:hover {
+  background-color: #f3f4f6;
+  cursor: pointer;
+}
+
+.dayNumber.today {
+  background-color: #06b6d4;
+  color: white;
+}
+
+.dayNumber.today:hover {
+  background-color: #0891b2;
+}
+
+.dayEvents {
+  flex: 1;
+  margin-top: 0.5rem;
+}
+
+/* Empty cells */
+.emptyCell {
+  /* No styles needed for empty cells */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .calendar-wrapper {
+    width: 95%;
+    height: 85vh;
+  }
+
+  .calendar-header {
+    padding: 1rem;
+  }
+
+  .calendar-body {
+    padding: 1rem;
+  }
+
+  .calendar-title {
+    font-size: 1.25rem;
+  }
+
+  .calendar-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .calendar-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
