@@ -97,6 +97,13 @@
   padding: 0.5rem;
   vertical-align: top;
   position: relative;
+  background-color: var(--background-color);
+  box-sizing: border-box;
+}
+
+.calendarTable tbody td:hover {
+   transform: scale(1.10);
+    box-sizing: border-box;
 }
 
 /* Day cell content */

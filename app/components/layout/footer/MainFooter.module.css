@@ -27,7 +27,7 @@
 }
 
 .footerLinks a {
-    color: var(--secondary-color);
+    color: var(--title-color);
     text-decoration: none;
     font-size: 14px;
     transition: all 0.3s ease;
@@ -40,14 +40,14 @@
 }
 
 .footerSection h3 {
-    color: var(--primary-color);
+    color: var(--title-color);
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
 .footerDescription {
-    color: var(--secondary-color);
+    color: var(--title-color);
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 15px;
