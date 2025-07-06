@@ -1,4 +1,4 @@
-import { profile } from "console";
+import { log, profile } from "console";
 
 const en = {
   login: {
@@ -23,6 +23,7 @@ const en = {
       metrics: "Metrics",
       myProfile: "My Profile",
       about: "About",
+      login: "Login",
     }
   },
 };

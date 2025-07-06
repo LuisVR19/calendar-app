@@ -3,9 +3,14 @@
 import { getTranslations } from "@/app/lib/i18n";
 import styles from './MainNavbar.module.css';
 import { useEffect } from "react";
+import CustomButton from "../../ui/button/CustomButton";
+import { useTheme } from "@/app/context/ThemeContext";
 
 
 const MainNavbar = ({  }) => {
+    const t = getTranslations("en");
+      const { theme, toggleTheme } = useTheme();
+
 
     useEffect(() => {
         const mobileLinks = document.querySelectorAll(`.${styles.mobileMenuLink}`);
@@ -58,26 +63,29 @@ const MainNavbar = ({  }) => {
 
             <ul className={styles.navbarMenu}>
                 <li className={styles.navbarItem}>
-                    <a href="#" className={styles.navbarLink}>Inicio</a>
+                    <a href="#" className={styles.navbarLink}>{t.layout.pages.home}</a>
                 </li>
                 <li className={styles.navbarItem}>
-                    <a href="#" className={styles.navbarLink}>Productos</a>
+                    <a href="#" className={styles.navbarLink}>{t.layout.pages.calendar}</a>
                 </li>
                 <li className={styles.navbarItem}>
-                    <a href="#" className={styles.navbarLink}>Servicios</a>
+                    <a href="#" className={styles.navbarLink}>{t.layout.pages.groups}</a>
                 </li>
                 <li className={styles.navbarItem}>
-                    <a href="#" className={styles.navbarLink}>Acerca de</a>
+                    <a href="#" className={styles.navbarLink}>{t.layout.pages.metrics}</a>
                 </li>
                 <li className={styles.navbarItem}>
-                    <a href="#" className={styles.navbarLink}>Contacto</a>
+                    <a href="#" className={styles.navbarLink}>{t.layout.pages.about}</a>
+                </li>
+                <li className={styles.navbarItem}>
+                    <CustomButton onClick={toggleTheme}>Cambiar tema</CustomButton>
                 </li>
             </ul>
 
             <div className={styles.navbarProfile}>
                 <a href="#" className={styles.profileButton} >
                     <div className={styles.profileAvatar}>JD</div>
-                    <span>Mi Perfil</span>
+                    <span>{t.layout.pages.myProfile}</span>
                 </a>
             </div>
 
@@ -91,26 +99,26 @@ const MainNavbar = ({  }) => {
         <div className={`${styles.mobileMenu} ${styles.hide}`}>
             <ul className={styles.mobileMenuList}>
             <li className={styles.mobileMenuItem}>
-                <a href="#" className={styles.mobileMenuLink}>Inicio</a>
+                <a href="#" className={styles.mobileMenuLink}>{t.layout.pages.home}</a>
             </li>
             <li className={styles.mobileMenuItem}>
-                <a href="#" className={styles.mobileMenuLink}>Productos</a>
+                <a href="#" className={styles.mobileMenuLink}>{t.layout.pages.calendar}</a>
             </li>
             <li className={styles.mobileMenuItem}>
-                <a href="#" className={styles.mobileMenuLink}>Servicios</a>
+                <a href="#" className={styles.mobileMenuLink}>{t.layout.pages.groups}</a>
             </li>
             <li className={styles.mobileMenuItem}>
-                <a href="#" className={styles.mobileMenuLink}>Acerca de</a>
+                <a href="#" className={styles.mobileMenuLink}>{t.layout.pages.metrics}</a>
             </li>
             <li className={styles.mobileMenuItem}>
-                <a href="#" className={styles.mobileMenuLink}>Contacto</a>
+                <a href="#" className={styles.mobileMenuLink}>{t.layout.pages.about}</a>
             </li>
             </ul>
 
             <div className="mobile-profile">
             <a href="#" className="profile-button" >
                 <div className="profile-avatar">JD</div>
-                <span>Mi Perfil</span>
+                <span>{t.layout.pages.myProfile}</span>
             </a>
             </div>
         </div>

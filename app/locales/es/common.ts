@@ -23,6 +23,7 @@ const es = {
       metrics: "Métricas",
       myProfile: "Mi Perfil",
       about: "Acerca de",
+      login: "Iniciar Sesión",
     },
   },
 };

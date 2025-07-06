@@ -19,7 +19,7 @@ export default function Login() {
     }
     
     return (
-        <Container>
+        <Container isLogin={true}>
             <h1 className={styles.loginTitle}>{t.login.title}</h1>
 
             <Image className={styles.img}

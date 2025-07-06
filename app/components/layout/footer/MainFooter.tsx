@@ -1,6 +1,6 @@
 import { getTranslations } from "@/app/lib/i18n";
 import styles from './MainFooter.module.css';
-
+import { routes } from "@/app/lib/routes";
 
 const MainFooter = ({  }) => {
 
@@ -30,6 +30,7 @@ const t = getTranslations("en");
                         <li><a href="#">{t.layout.pages.groups}</a></li>
                         <li><a href="#">{t.layout.pages.metrics}</a></li>
                         <li><a href="#">{t.layout.pages.about}</a></li>
+                        <li><a href={routes.auth.login}>{t.layout.pages.login}</a></li>
                     </ul>
                 </div>
 
@@ -42,6 +43,7 @@ const t = getTranslations("en");
                 <div className={styles.footerLegal}>
                     <a href="#">Términos de Servicio</a>
                     <a href="#">Política de Privacidad</a>
+                    <a href="#">Cookies</a>
                     <a href="#">Cookies</a>
                 </div>
             </div>
