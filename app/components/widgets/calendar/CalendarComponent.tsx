@@ -1,4 +1,5 @@
 import styles from './CalendarComponent.module.css';
+// import { ResponseDTO } from '../../../../models/ResponseDTO';
 
 interface Assigment {
   title: string;
@@ -44,7 +45,6 @@ const CalendarComponent: React.FC<Props> = ({ calendarData }) => {
     }
   });
 
-  // Si queda semana incompleta al final
   if (currentWeek.some(d => d !== null)) {
     weeks.push(currentWeek);
   }
