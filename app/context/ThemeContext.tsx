@@ -1,4 +1,3 @@
-// app/context/ThemeContext.tsx
 'use client';
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
@@ -13,10 +12,11 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>('light'); // ← aquí lo ponés como 'light' por defecto
+  const [theme, setTheme] = useState<Theme>('light');
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Este bloque solo corre en el cliente
+    setIsClient(true); // Se espera  
     const savedTheme = localStorage.getItem('theme') as Theme;
     if (savedTheme) {
       setTheme(savedTheme);
@@ -25,14 +25,17 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   useEffect(() => {
+    if (!isClient) return;
     localStorage.setItem('theme', theme);
     document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
+  }, [theme, isClient]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
   };
+
+  if (!isClient) return null; // ← Esto evita el mismatch en SSR
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -40,7 +43,6 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     </ThemeContext.Provider>
   );
 };
-
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);

@@ -47,6 +47,23 @@
   --border-color-calendar: gray;
 }
 
+[data-theme="hodgson"] {
+  --main-background-color: red;
+  --background-color: #2F3B52;
+  --border-color: #20293C;
+  --title-color: green;
+  --focus-color: gray;
+  --input-background-color: #20293C;
+  --primary-color: #2c698d;
+
+  --error-color: #e74c3c;
+  --muted-color: #999;
+  --backgroud-input: linear-gradient(to bottom, var(--background-color) 50%, var(--input-background-color)50%);
+  --label-background-color: none;
+  --button-color: var(--title-color);
+  --border-color-calendar: gray;
+}
+
 /* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

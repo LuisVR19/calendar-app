@@ -1,40 +1,21 @@
 import styles from './CalendarComponent.module.css';
-// import { ResponseDTO } from '../../../../models/ResponseDTO';
+import { useCalendar } from './useCalendar';
 
-interface Assigment {
-  title: string;
-  completed: boolean;
-}
 
-interface CalendarDay {
-  date: string;
-  weekDay: number;
-  isHoliday: boolean;
-  holidayName: string | null;
-  assigments: Assigment[] | null;
-}
+const CalendarComponent: React.FC = () => {
 
-interface CalendarData {
-  isSucceded: boolean;
-  message: string | null;
-  data: CalendarDay[];
-}
+  const { year, month, calendarData, loading, incrementMonth, decrementMonth } = useCalendar(2025, 7);
 
-interface Props {
-  calendarData: CalendarData;
-}
-
-const CalendarComponent: React.FC<Props> = ({ calendarData }) => {
   const monthName = "July 2025";
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   const today = 15; // Día actual para resaltar (puede hacerse dinámico)
 
   // Agrupar días en semanas
-  const weeks: (CalendarDay | null)[][] = [];
-  let currentWeek: (CalendarDay | null)[] = new Array(7).fill(null);
+  const weeks: (Day | null)[][] = [];
+  let currentWeek: (Day | null)[] = new Array(7).fill(null);
 
-  calendarData.data.forEach(day => {
+  calendarData?.forEach(day => {
     const dayIndex = day.weekDay;
 
     currentWeek[dayIndex] = day;
